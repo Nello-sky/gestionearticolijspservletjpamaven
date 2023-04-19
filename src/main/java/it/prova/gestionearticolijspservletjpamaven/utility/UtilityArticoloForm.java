@@ -24,6 +24,20 @@ public class UtilityArticoloForm {
 		return result;
 	}
 
+	public static Articolo createArticoloFromAll(Long idInputParam, String codiceInputParam, String descrizioneInputParam,
+			String prezzoInputStringParam, String dataArrivoStringParam) {
+
+		Articolo result = new Articolo(idInputParam,codiceInputParam, descrizioneInputParam);
+
+		if (NumberUtils.isCreatable(prezzoInputStringParam)) {
+			result.setPrezzo(Integer.parseInt(prezzoInputStringParam));
+		}
+		result.setDataArrivo(parseDateArrivoFromString(dataArrivoStringParam));
+
+		return result;
+	}	
+	
+	
 	public static boolean validateArticoloBean(Articolo articoloToBeValidated) {
 		// prima controlliamo che non siano vuoti i parametri
 		if (StringUtils.isBlank(articoloToBeValidated.getCodice())

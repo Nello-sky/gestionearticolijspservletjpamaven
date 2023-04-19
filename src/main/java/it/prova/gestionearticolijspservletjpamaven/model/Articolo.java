@@ -51,6 +51,14 @@ public class Articolo {
 		this.descrizione = descrizione;
 	}
 
+	
+	public Articolo(Long id, String codice, String descrizione) {
+		super();
+		this.id = id;
+		this.codice = codice;
+		this.descrizione = descrizione;
+	}
+
 	public Long getId() {
 		return id;
 	}
